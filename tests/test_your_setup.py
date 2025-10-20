@@ -6,6 +6,8 @@ import json
 from db_manager.db_man import DBManager
 from db_manager.data_fetcher import DataFetcher
 
+
+
 def get_config():
      with open("config.json", 'r') as f:
         properties = json.load(f)
@@ -14,10 +16,13 @@ def get_config():
 def test_connect_to_mariadb():
     print("*** Testing configuration and ability to connect to MariaDB ***")
     db = DBManager()
+    db.create_pool()
 
 def test_fetch_data():
     print("Testing that your provided url(s) can be be fetched")
     num_workers = len(get_config()["worker_types"])
-    df = DataFetcher()
+    db = DBManager()
     for i in range(num_workers):
-        df.read_data_from_worker_type(i)
+        data = db.read_data_from_worker_type(i)
+        print("Data recieved : ")
+        print(json.dumps(data, indent=4))
