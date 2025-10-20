@@ -1,0 +1,14 @@
+{
+    "database": {
+        "username": "yoursusername",
+        "password": "yourpassword",
+        "name": "mariadb"
+    },
+    "worker_types": [
+        {
+            "query": "INSERT INTO mytable VALUES(?,?,?) ON DUPLICATE KEY UPDATE",
+            "data_source_url": "https://this is the url to fetch data from -  OPTIONAL",
+            "description": "This is a worker configuration, you can have many instances of this worker"
+        }
+    ]
+}

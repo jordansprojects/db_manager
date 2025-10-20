@@ -1,0 +1,13 @@
+certifi==2025.8.3
+charset-normalizer==3.4.3
+idna==3.10
+iniconfig==2.3.0
+mariadb==1.1.13
+my_module @ file:///home/jordan/MyCode/db_manager
+packaging==25.0
+pluggy==1.6.0
+Pygments==2.19.2
+pytest==8.4.2
+requests==2.32.5
+setuptools==80.9.0
+urllib3==2.5.0
